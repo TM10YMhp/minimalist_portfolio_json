@@ -1,0 +1,162 @@
+---
+import Globe from "@/components/icons/social/Globe.astro";
+import X from "@/components/icons/social/X.astro";
+import Mail from "@/components/icons/social/Mail.astro";
+import GitHub from "@/components/icons/tech/GitHub.astro";
+import WhatsApp from "@/components/icons/social/WhatsApp.astro";
+import LinkedIn from "@/components/icons/social/LinkedIn.astro";
+
+import cv from "@/data/cv.json";
+
+const { name, label, image, email, phone, location, profiles } = cv.basics;
+
+type ProfileInfo = { title: string; url: string };
+const profileInfo = profiles.reduce((acc: ProfileInfo[], el) => {
+  if (el.url) {
+    const title = `${el.network === "X" ? "Twitter" : el.network}: `;
+    const draft = { title, url: el.url };
+    acc.push(draft);
+  }
+
+  return acc;
+}, []);
+const printInfo = [
+  { title: "Correo: ", url: email },
+  { title: "WhatsApp: ", url: phone },
+  ...profileInfo,
+].filter((el) => el.url);
+
+const contactLinks = [
+  {
+    href: email && `mailto:${email}`,
+    title: `Enviar un correo electrónico a ${name} al correo ${email}`,
+    icon: Mail,
+  },
+  {
+    href: phone && `https://wa.me/${phone.split(" ").join("")}`,
+    title: `Mandar un mensaje por WhatsApp a ${name} al número ${phone}`,
+    icon: WhatsApp,
+  },
+].filter((el) => el.href);
+
+const SOCIAL_ICONS: Record<string, any> = {
+  GitHub,
+  LinkedIn,
+  X,
+};
+const profilesLinks = profiles.map((el: any) => ({
+  ...el,
+  title: `Visitar el perfil de ${name} en ${el.network}`,
+  icon: SOCIAL_ICONS[el.network],
+}));
+---
+
+<section class="space-y-1.5">
+  <h1>{name}</h1>
+  <p>{label}</p>
+  <p class="location text-xs">
+    <Globe />
+    <a
+      href={`https://www.google.com/maps/place/${location.city}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {location.city}, {location.region}
+    </a>
+  </p>
+  <footer class="print">
+    <ul class="cols-2">
+    {
+      printInfo.map((el) => (
+        <li class="white-space-nowrap">
+          {el.title}
+          {el.url}
+        </li>
+      ))
+    }
+    </ul>
+  </footer>
+  <footer class="contact no-print">
+    {
+      contactLinks.map((el) => (
+        <a
+          class="contact__link"
+          href={el.href}
+          title={el.title}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <el.icon />
+        </a>
+      ))
+    }
+    {
+      profilesLinks.map((el) => (
+        <a
+          class="contact__link"
+          href={el.url}
+          title={el.title}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <el.icon />
+        </a>
+      ))
+    }
+  </footer>
+  {
+    image && (
+      <figure>
+        <img src={image} alt={name} />
+      </figure>
+    )
+  }
+</section>
+
+<style>
+  .location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .location > :global(svg) {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .cols-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    font-size: 0.875rem;
+  }
+
+  .contact {
+    color: var(--text-secondary);
+    display: flex;
+    gap: 4px;
+    margin-top: 0.25rem;
+  }
+
+  .contact__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-primary);
+    padding: 0.25rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+  }
+
+  .contact__link:hover {
+    background: var(--background-accent);
+    color: var(--text-primary);
+  }
+
+  .contact__link > :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+</style>

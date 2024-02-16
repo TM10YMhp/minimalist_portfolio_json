@@ -1,0 +1,80 @@
+---
+import Palette from "@/components/icons/Palette.astro";
+import { Theme } from "@/models/theme";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class="themes">
+  <button class={className} id="themeButton" {...rest}><Palette /></button>
+  <div class="themes__buttons" style="display: none">
+    {
+      Object.values(Theme).map((el) => (
+        <button class={`themes__button ${el}`} id={el}>
+          {el.split("_").slice(1).join(" ")}
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+
+<script>
+  import { THEME_STORAGE_KEY } from "@/models/theme";
+
+  const theme = document.querySelectorAll(".themes__button")!;
+  theme.forEach((el) => {
+    el.addEventListener("click", () => {
+      document.documentElement.className = el.id;
+      window.localStorage.setItem(THEME_STORAGE_KEY, el.id);
+    });
+  });
+
+  const themes = document.querySelector(".themes__buttons") as HTMLElement;
+  const button = document.getElementById("themeButton")!;
+  button.addEventListener("click", () => {
+    const isHidden = themes.style.display === "none";
+    themes.style.display = isHidden ? "flex" : "none";
+  });
+
+  document.documentElement.addEventListener("click", (e) => {
+    if (!themes.contains(e.target as Node) && !button.contains(e.target as Node)) {
+      const isHidden = themes.style.display === "none";
+      if (!isHidden) themes.style.display ="none"
+    }
+  })
+</script>
+
+<style>
+  .themes {
+    position: relative;
+    margin-left: auto;
+  }
+
+  .themes__buttons {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 0.25rem;
+    padding: 0.25rem;
+
+    background: var(--background-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 6px;
+  }
+
+  .themes__button {
+    white-space: nowrap;
+    border: 1px solid var(--border-primary);
+    border-radius: 2px;
+    padding: 0.1rem 1rem;
+    font-size: 0.875rem;
+    background: var(--background-primary);
+    color: var(--text-primary);
+  }
+  .themes__button:hover {
+    background: var(--background-accent);
+  }
+</style>

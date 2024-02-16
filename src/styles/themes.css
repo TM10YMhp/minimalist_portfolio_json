@@ -1,0 +1,143 @@
+.theme_light {
+  --background-primary: #fff;
+  --background-accent: #c4c4c499;
+  --background-accent-hover: #c4c4c4ff;
+  --background-accent-active: #c4c4c433;
+
+  --text-primary: #000;
+  --text-secondary: #595959;
+  --text-success: #00ad00;
+
+  --border-primary: #7d7d7d;
+  --border-highlight: transparent;
+}
+.theme_dark {
+  --background-primary: #111111;
+  --background-accent: #40404099;
+  --background-accent-hover: #404040ff;
+  --background-accent-active: #40404033;
+
+  --text-primary: #fff;
+  --text-secondary: #cccccc;
+  --text-success: #00ff00;
+
+  --border-primary: #7d7d7d;
+  --border-highlight: transparent;
+}
+.theme_tokyonight {
+  --background-primary: #222436;
+  --background-accent: #444a7399;
+  --background-accent-hover: #444a73ff;
+  --background-accent-active: #444a7333;
+
+  --text-primary: #c8d3f5;
+  --text-secondary: #828997;
+  --text-success: #c3e88d;
+
+  --border-primary: #545c7e;
+  --border-highlight: transparent;
+}
+.theme_serene {
+  --background-primary: #000;
+  --background-accent: transparent;
+  --background-accent-hover: #79797955;
+  --background-accent-active: #79797966;
+
+  --text-primary: #fff;
+  --text-secondary: #fff;
+  --text-success: #22c55b;
+
+  --border-primary: #fff;
+  --border-highlight: #fff;
+}
+.theme_forest {
+  --background-primary: #1f3334;
+  --background-accent: #39555699;
+  --background-accent-hover: #395556ff;
+  --background-accent-active: #39555633;
+
+  --text-primary: #bcd6d7;
+  --text-secondary: #86b4b7;
+  --text-success: #87ffc5;
+
+  --border-primary: #375b5d;
+  --border-highlight: transparent;
+}
+.theme_bruma {
+  --background-primary: #3e1c43;
+  --background-accent: #683a6e99;
+  --background-accent-hover: #683a6eff;
+  --background-accent-active: #683a6e33;
+
+  --text-primary: #e3d6ff;
+  --text-secondary: #d3beff;
+  --text-success: #87ffc5;
+
+  --border-primary: #672f70;
+  --border-highlight: transparent;
+}
+.theme_twilight {
+  --background-primary: #22273e;
+  --background-accent: #41497699;
+  --background-accent-hover: #414976ff;
+  --background-accent-active: #41497633;
+
+  --text-primary: #bdc6fa;
+  --text-secondary: #8d9cf6;
+  --text-success: #87ffc5;
+
+  --border-primary: #485384;
+  --border-highlight: transparent;
+}
+.theme_solarized_light {
+  --background-primary: #fdf6e3;
+  --background-accent: #bec6c699;
+  --background-accent-hover: #bec6c6ff;
+  --background-accent-active: #bec6c633;
+
+  --text-primary: #586e75;
+  --text-secondary: #657b83;
+  --text-success: #859900;
+
+  --border-primary: #bec6c6;
+  --border-highlight: transparent;
+}
+.theme_solarized_dark {
+  --background-primary: #002b36;
+  --background-accent: #003d4d99;
+  --background-accent-hover: #003d4dff;
+  --background-accent-active: #003d4d33;
+
+  --text-primary: #93a1a1;
+  --text-secondary: #657b83;
+  --text-success: #859900;
+
+  --border-primary: #586e75;
+  --border-highlight: transparent;
+}
+.theme_classic {
+  --background-primary: #000;
+  --background-accent: #40404099;
+  --background-accent-hover: #404040ff;
+  --background-accent-active: #40404033;
+
+  --text-primary: #fff;
+  --text-secondary: #cccccc;
+  --text-success: #00ba13;
+
+  --border-primary: #7d7d7d;
+  --border-highlight: transparent;
+}
+.theme_soft_dark {
+  --background-primary: #202124;
+  --background-accent: #3c404399;
+  --background-accent-hover: #3c4043ff;
+  --background-accent-active: #3c404333;
+
+  --text-primary: #fff;
+  --text-secondary: #cccccc;
+  --text-success: #87ffc5;
+
+  --border-primary: #3c4043;
+  --border-highlight: transparent;
+}

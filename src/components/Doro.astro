@@ -1,0 +1,74 @@
+<div id="doro-container">
+  <div id="doro-el"></div>
+</div>
+
+<script>
+  import interact from "interactjs";
+
+  const position = { x: 0, y: 0 };
+  const target = document.getElementById("doro-el") as HTMLElement;
+  // const onMove = (event: any) => {
+  //   position.x += event.dx;
+  //   position.y += event.dy;
+  //
+  //   event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+  // };
+
+  let angle = 0;
+  let scale = 1.0;
+
+  function onMove(event: any) {
+    position.x += event.dx;
+    position.y += event.dy;
+
+    angle += event.da ? event.da : 0;
+    scale += event.ds ? event.ds : 0;
+
+    event.target.style.transform = `translate(${position.x}px, ${position.y}px)
+     rotate(${angle}deg)
+     scale(${scale})`;
+  }
+  interact("#doro-el")
+    .draggable({
+      inertia: {
+        resistance: 5,
+        endSpeed: 5,
+        allowResume: true,
+        smoothEndDuration: 300,
+      },
+      listeners: {
+        move: onMove,
+      },
+    })
+    .gesturable({
+      listeners: {
+        move: onMove,
+      },
+    });
+  //////////////////////////////////////////////////////////////////
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        interact(target).unset();
+        entry.target.remove();
+        console.log("out");
+      }
+    });
+  });
+  observer.observe(target);
+  //////////////////////////////////////////////////////////////////
+</script>
+
+<style>
+  #doro-el {
+    background: red;
+    position: fixed;
+    inset: 0;
+    width: 7rem;
+    height: 7rem;
+
+    -ms-touch-action: none;
+    touch-action: none;
+    user-select: none;
+  }
+</style>

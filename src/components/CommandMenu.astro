@@ -1,0 +1,92 @@
+---
+import Cmd from "@/components/icons/social/Cmd.astro";
+import X from "@/components/icons/social/X.astro";
+import GitHub from "@/components/icons/tech/GitHub.astro";
+import LinkedIn from "@/components/icons/social/LinkedIn.astro";
+import Mail from "@/components/icons/social/Mail.astro";
+import WhatsApp from "@/components/icons/social/WhatsApp.astro";
+import Printer from "@/components/icons/social/Printer.astro";
+
+import { Theme } from "@/models/theme";
+import Palette from "@/components/icons/Palette.astro";
+
+const sections = [
+  {
+    name: "Acciones",
+    items: [{ id: "Print", name: "Imprimir", icon: Printer }],
+  },
+  {
+    name: "Enlaces",
+    items: [
+      { id: "Email", name: "Mandar Correo", icon: Mail },
+      { id: "Phone", name: "Mandar Mensaje", icon: WhatsApp },
+      { id: "LinkedIn", name: "Visitar LinkedIn", icon: LinkedIn },
+      { id: "X", name: "Visitar X", icon: X },
+      { id: "GitHub", name: "Visitar GitHub", icon: GitHub },
+    ],
+  },
+];
+const commands = [
+  { name: "seleccionar", keys: ["↩"] },
+  { name: "navegar", keys: ["↑", "↓"] },
+  { name: "cerrar", keys: ["Ctrl + K", "Esc"] },
+];
+---
+
+<footer id="normal-footer" class="no-print">
+  Pulsa <kbd>Ctrl + K</kbd> para abrir la paleta de comandos.
+</footer>
+
+<div id="footer-button" class="no-print">
+  <Cmd />
+</div>
+
+<div class="dialog no-print" style="display: none">
+  <div class="dialog__backdrop"></div>
+  <div class="dialog__container" tabindex="-1">
+    <div class="dialog__sections">
+      {
+        sections.map((section) => (
+          <div>
+            <p class="section__title">{section.name}</p>
+            {section.items.map((item: any) => (
+              <p class="section__content" id={item.id}>
+                <item.icon /> {item.name}
+              </p>
+            ))}
+          </div>
+        ))
+      }
+      <div>
+        <p class="section__title">Temas</p>
+        {
+          Object.values(Theme).map((el) => (
+            <p class="section__content theme" id={el} tabindex="-1">
+              <Palette /> {el.split("_").slice(1).join(" ")}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+    <div class="dialog__footer">
+      {
+        commands.map((command) => (
+          <p>
+            {command.keys.map((key) => (
+              <kbd>{key}</kbd>
+            ))}
+            <span>{command.name}</span>
+          </p>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import "@/scripts/commandMenu.ts"
+</script>
+
+<style>
+  @import "@/styles/commandMenu.css";
+</style>

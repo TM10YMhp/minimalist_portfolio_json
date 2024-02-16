@@ -1,0 +1,55 @@
+---
+import cv from "@/data/cv.json";
+---
+
+<section class="space-y-3">
+  <h2>Experiencia</h2>
+  <ul class="space-y-3">
+    {
+      cv.work.map(({ name, startDate, endDate, position, summary, url }) => {
+        const startYear = new Date(startDate).getFullYear();
+        const endYear = endDate ? new Date(endDate).getFullYear() : "Actual";
+
+        return (
+          <li>
+            <article>
+              <header class="space-y-1.5">
+                <h3 class="experience__title">
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    {name}
+                  </a>
+                  <p class="experience__date">
+                    {startYear} - {endYear}
+                  </p>
+                </h3>
+                <h4>{position}</h4>
+              </header>
+
+              <footer class="experience__footer">
+                <p>{summary}</p>
+              </footer>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  .experience__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .experience__date {
+    font-weight: 500;
+  }
+
+  .experience__footer {
+    margin-top: 0.5rem;
+  }
+</style>

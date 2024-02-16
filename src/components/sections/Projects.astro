@@ -1,0 +1,84 @@
+---
+import Highlight from "@/components/Highlight.astro";
+
+import cv from "@/data/cv.json";
+---
+
+<section class="space-y-3">
+  <h2>Proyectos</h2>
+  <ul class="projects">
+    {
+      cv.projects.map((el) => (
+        <li>
+          <article class="project">
+            <header class="space-y-1.5">
+              <h3>
+                {el.url ? (
+                  <a
+                    class="project__name"
+                    href={el.url}
+                    target="_blank"
+                    title={`Ver el proyecto ${el.name}`}
+                    rel="noopener noreferrer"
+                  >
+                    {el.name} <span class="project--active" />
+                  </a>
+                ) : (
+                  el.name
+                )}
+              </h3>
+              <p class="text-xs">{el.description}</p>
+            </header>
+            <footer class="project__highlights">
+              {el.highlights.map((highlight) => (
+                <Highlight>{highlight}</Highlight>
+              ))}
+            </footer>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.75rem;
+    margin-inline: 0;
+  }
+
+  @media (min-width: 768px) {
+    .projects {
+      margin-inline: -0.75rem;
+    }
+  }
+
+  .project {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-primary);
+    padding: 0.75rem;
+    height: 100%;
+  }
+
+  .project__highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .project__name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .project--active {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 9999px;
+    background: var(--text-success);
+  }
+</style>

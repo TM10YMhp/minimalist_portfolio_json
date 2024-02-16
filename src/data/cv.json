@@ -1,0 +1,328 @@
+{
+  "basics": {
+    "name": "Alejandro Maturrano",
+    "label": "Full Stack Developer enfocado en crear productos con especial atención al detalle.",
+    "image": "",
+    "email": "tm10ymhp@protonmail.com",
+    "phone": "+51 926535952",
+    "url": "https://tm10ymhp.netlify.app",
+    "summary": "Como Full Stack, he llevado con éxito múltiples productos de 0 a 1. Lidero equipos de manera efectiva, garantizando un entorno donde las personas puedan hacer su mejor trabajo. Actualmente trabajo principalmente con TypeScript, React, Node.js y NextJS. Tengo más de 4 años de experiencia trabajando de forma remota con empresas de todo el mundo.",
+    "location": {
+      "address": "Ica",
+      "postalCode": "11001",
+      "city": "Ica",
+      "countryCode": "+51",
+      "region": "Perú, GMT"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "TM10YMhp",
+        "url": "https://github.com/TM10YMhp"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "TM10YMhp",
+        "url": "https://linkedin.com/in/TM10YMhp"
+      },
+      {
+        "network": "X",
+        "username": "TM10YMhp",
+        "url": "https://x.com/TM10YMhp"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Fisiom Fulness",
+      "position": "Semi Senior Front End Developer",
+      "url": "",
+      "startDate": "2023-11-20",
+      "endDate": "2024-02-16",
+      "summary": "Implementé nuevas funcionalidades, lideré el equipo, trabajé para mejorar la forma en que los desarrolladores envían el código, comencé la migración de React a NextJS y más. Tecnologías: React, JavaScript, TypeScript, NextJS, Tailwind, PandaCSS.",
+      "highlights": ["Started the company"]
+    },
+    {
+      "name": "Freelancer",
+      "position": "Desarrollador Web",
+      "url": "",
+      "startDate": "2020-02-01",
+      "endDate": "2024-12-12",
+      "summary": "Realicé migraciones a frameworks como Vite, NextJS, Astro, Remix y Angular, mejoré la calidad del código, accesibilidad, flexibilidad y mejoras de rendimiento, trabajé con equipos de distintas partes del mundo, implementé pasarelas de pago, notificaciones por correo, encriptación, autenticación, paneles de control, etc.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University",
+      "url": "",
+      "area": "Ingeniero de Software",
+      "studyType": "Bachelor",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": ""
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "",
+      "summary": "Description"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "TypeScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Lua",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Python",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Java",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Node",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Express",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MongoDB",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "React",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Next.js",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Astro",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Tailwind",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "NeoVim",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "GitHub",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "fluency": "Hablante nativo"
+    },
+    {
+      "language": "Ingles",
+      "fluency": "Lectura"
+    }
+  ],
+  "interests": [
+    {
+      "name": "",
+      "keywords": []
+    }
+  ],
+  "references": [
+    {
+      "name": "",
+      "reference": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "Portafolio",
+      "startDate": "",
+      "endDate": "",
+      "description": "Mi portafolio personal. Construido con Astro y TypeScript.",
+      "highlights": [
+        "Side Project",
+        "Astro",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "PostHog"
+      ],
+      "url": "https://tm10ymhp.netlify.app"
+    },
+    {
+      "name": "init.lua",
+      "startDate": "",
+      "endDate": "",
+      "description": "Distro de NeoVim inspirada en LazyVim, NvChad y en la visión de Bram Moolenar, el creador de Vim.",
+      "highlights": ["Side Project", "Lua", "NeoVim", "LSP", "Dotfiles"],
+      "url": "https://github.com/TM10YMhp/init.lua/tree/test"
+    },
+    {
+      "name": "Markdown Editor",
+      "startDate": "",
+      "endDate": "",
+      "description": "Editor de markdown con previsualización en tiempo real, detección de lenguajes y resaltado de sintaxis.",
+      "highlights": [
+        "Side Project",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "CodeMirror",
+        "Remark"
+      ],
+      "url": "https://markdown-editor-311416.netlify.app"
+    },
+    {
+      "name": "Pokedex Angular",
+      "startDate": "",
+      "endDate": "",
+      "description": "Pokedex con acceso a más de 800 especies de pokémon con sugerencias en tiempo real.",
+      "highlights": [
+        "Side Project",
+        "Angular",
+        "TypeScript",
+        "Playwright",
+        "RxJS",
+        "Tailwind CSS"
+      ],
+      "url": "https://pokedex-test-angular.netlify.app"
+    },
+    {
+      "name": "UI Mockup - Notes",
+      "startDate": "",
+      "endDate": "",
+      "description": "Diseño para aplicación móvil, muestra un listado de notas y una zona de visualización adaptable.",
+      "highlights": [
+        "Side Project",
+        "Diseño",
+        "Next.js",
+        "Jotai",
+        "Tailwind CSS",
+        "JavaScript"
+      ],
+      "url": "https://ui-mockup-notes.netlify.app"
+    },
+    {
+      "name": "Musicfy",
+      "startDate": "",
+      "endDate": "",
+      "description": "Servicio de retransmisión de música con suscripciones y planes de pago.",
+      "highlights": [
+        "Side Project",
+        "React",
+        "Redux",
+        "Node.js",
+        "MongoDB",
+        "JavaScript",
+        "Styled Components",
+        "CSS Modules"
+      ],
+      "url": ""
+    },
+    {
+      "name": "Compress Webp",
+      "startDate": "",
+      "endDate": "",
+      "description": "Convierte y comprime imágenes a webp desde la interfaz de comandos.",
+      "highlights": ["Side Project", "Node.js", "JavaScript", "Sharp"],
+      "url": ""
+    },
+    {
+      "name": "RPG Python",
+      "startDate": "",
+      "endDate": "",
+      "description": "Juego estilo RPG migrado de Java a Python.",
+      "highlights": ["Side Project", "Java", "Python", "Pygame"],
+      "url": ""
+    },
+    {
+      "name": "Donut.rs",
+      "startDate": "",
+      "endDate": "",
+      "description": "Donut en 3D con caracteres ASCII que gira sobre un eje, hecho en Rust.",
+      "highlights": ["Side Project", "Rust"],
+      "url": ""
+    }
+  ]
+}

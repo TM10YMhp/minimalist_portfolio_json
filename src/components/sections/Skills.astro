@@ -1,0 +1,72 @@
+---
+import HTML from "@/components/icons/tech/HTML.astro";
+import CSS from "@/components/icons/tech/CSS.astro";
+import Lua from "@/components/icons/tech/Lua.astro";
+import Python from "@/components/icons/tech/Python.astro";
+import Java from "@/components/icons/tech/Java.astro";
+import Express from "@/components/icons/tech/Express.astro";
+import PostgreSQL from "@/components/icons/tech/PostgreSQL.astro";
+import MongoDB from "@/components/icons/tech/MongoDB.astro";
+import NeoVim from "@/components/icons/tech/NeoVim.astro";
+import TypeScript from "@/components/icons/tech/TypeScript.astro";
+import JavaScript from "@/components/icons/tech/JavaScript.astro";
+import Node from "@/components/icons/tech/Node.astro";
+import React from "@/components/icons/tech/React.astro";
+import Next from "@/components/icons/tech/Next.astro";
+import Tailwind from "@/components/icons/tech/Tailwind.astro";
+import Git from "@/components/icons/tech/Git.astro";
+import GitHub from "@/components/icons/tech/GitHub.astro";
+import * as AstroIcon from "@/components/icons/tech/Astro.astro";
+
+import Highlight from "@/components/Highlight.astro";
+
+import cv from "@/data/cv.json";
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  Git,
+  GitHub,
+  "Next.js": Next,
+  Tailwind,
+  Lua,
+  Python,
+  Java,
+  Express,
+  PostgreSQL,
+  MongoDB,
+  NeoVim,
+  Astro: AstroIcon.default
+};
+const skills = cv.skills.map((el: any) => ({
+  ...el,
+  icon: SKILLS_ICONS[el.name],
+}));
+---
+
+<section class="space-y-3">
+  <h2>Habilidades</h2>
+  <ul class="skills">
+    {
+      skills.map((el) => (
+        <li class="skills__item">
+          <Highlight>
+            {el.icon && <el.icon />} {el.name}
+          </Highlight>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+</style>
