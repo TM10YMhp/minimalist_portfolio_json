@@ -15,9 +15,18 @@ import cv from "@/data/cv.json";
             <article>
               <header class="space-y-1.5">
                 <h3 class="experience__title">
-                  <a href={url} target="_blank" rel="noopener noreferrer">
-                    {name}
-                  </a>
+                  {url ? (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="experience__name"
+                    >
+                      {name} <span class="experience--active" />
+                    </a>
+                  ) : (
+                    <span>{name}</span>
+                  )}
                   <p class="experience__date">
                     {startYear} - {endYear}
                   </p>
@@ -44,12 +53,21 @@ import cv from "@/data/cv.json";
     align-items: center;
     width: 100%;
   }
-
+  .experience__name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
   .experience__date {
     font-weight: 500;
   }
-
   .experience__footer {
     margin-top: 0.5rem;
+  }
+  .experience--active {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 9999px;
+    background: var(--text-success);
   }
 </style>

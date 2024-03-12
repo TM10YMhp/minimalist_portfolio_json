@@ -61,7 +61,7 @@ const commands = [
         <p class="section__title">Temas</p>
         {
           Object.values(Theme).map((el) => (
-            <p class="section__content theme" id={el} tabindex="-1">
+            <p class="section__content theme" id={el}>
               <Palette /> {el.split("_").slice(1).join(" ")}
             </p>
           ))
