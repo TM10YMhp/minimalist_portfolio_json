@@ -36,11 +36,16 @@ const { title } = Astro.props;
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
+
+    <meta
+      name="google-site-verification"
+      content="czKUSHp61AiERzs6gzfnVG3dai9tpj7yihKYb0G7GsY"
+    />
   </head>
   <body>
     <script is:inline define:vars={{ Theme, THEME_STORAGE_KEY }}>
@@ -63,7 +68,7 @@ const { title } = Astro.props;
     !window.location.host.includes("localhost")
   ) {
     posthog.init(import.meta.env.PH_API_KEY, {
-      api_host: import.meta.env.PH_INSTANCE_ADDRESS
+      api_host: import.meta.env.PH_INSTANCE_ADDRESS,
     });
   }
 </script>
