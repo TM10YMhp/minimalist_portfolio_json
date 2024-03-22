@@ -57,16 +57,6 @@ const Urls = {
   GitHub: "https://github.com/TM10YMhp",
   X: "https://x.com/TM10YMhp",
 };
-const themeHandlers = Object.values(Theme).reduce(
-  (acc, el) => ({
-    ...acc,
-    [el]: () => {
-      document.documentElement.className = el;
-      window.localStorage.setItem(THEME_STORAGE_KEY, el);
-    },
-  }),
-  {},
-);
 const sectionHandlers: Record<string, () => void> = {
   Print: () => {
     window.print();
@@ -86,14 +76,17 @@ const sectionHandlers: Record<string, () => void> = {
   X: () => {
     window.open(Urls.X, "_blank", "noopener,noreferrer");
   },
-  ...themeHandlers,
+  ...Object.values(Theme).reduce(
+    (acc, el) => ({
+      ...acc,
+      [el]: () => {
+        document.documentElement.className = el;
+        window.localStorage.setItem(THEME_STORAGE_KEY, el);
+      },
+    }),
+    {},
+  ),
 };
-
-let currentIndex = 0;
-const items = document.querySelectorAll(".section__content");
-const backdrop = document.querySelector(".dialog__backdrop") as HTMLElement;
-
-const sections = document.querySelector(".dialog__sections") as HTMLElement;
 
 document.addEventListener("keydown", (event) => {
   if ((event.ctrlKey || event.metaKey) && event.key === "k") {
@@ -104,6 +97,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const backdrop = document.querySelector(".dialog__backdrop") as HTMLElement;
 backdrop.addEventListener("click", () => close());
 
 let mouseMove = false;
@@ -112,6 +106,10 @@ container.addEventListener("mousemove", () => {
   if (!mouseMove) mouseMove = true;
 });
 
+let currentIndex = 0;
+const items = document.querySelectorAll(".section__content");
+
+const sections = document.querySelector(".dialog__sections") as HTMLElement;
 container.addEventListener("keydown", (event) => {
   mouseMove = false;
 
@@ -178,5 +176,53 @@ items.forEach((el) => {
   el.addEventListener("click", () => {
     const id = el.id;
     if (sectionHandlers[id]) sectionHandlers[id]();
+  });
+});
+
+const indexedItems = [
+  "Imprimir",
+  "Mandar Correo",
+  "Mandar Mensaje",
+  "Visitar LinkedIn",
+  "Visitar X",
+  "Visitar GitHub",
+  "Light",
+  "Dark",
+  "Bruma",
+  "Classic",
+  "Forest",
+  "Serene",
+  "Soft Dark",
+  "Solarized Dark",
+  "Solarized Light",
+  "Tokyonight",
+  "Twilight",
+];
+
+// input
+const input = document.querySelector(".search__input") as HTMLInputElement;
+const contents = document.querySelectorAll(
+  ".section__content",
+) as NodeListOf<HTMLElement>;
+input.addEventListener("input", (e) => {
+  const value = (e.target as HTMLInputElement).value;
+  const results: string[] = [];
+
+  for (const key in indexedItems) {
+    const item = indexedItems[key];
+    if (item.toLowerCase().includes(value.toLowerCase())) {
+      results.push(item);
+    }
+  }
+  results.sort((a, b) => a.localeCompare(b));
+  console.log(results, value);
+
+  // TODO: indexedItems debe crearse con name y id
+  contents.forEach((el) => {
+    if (results.includes(el.id)) {
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+    }
   });
 });

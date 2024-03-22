@@ -9,6 +9,7 @@ import Printer from "@/components/icons/social/Printer.astro";
 
 import { Theme } from "@/models/theme";
 import Palette from "@/components/icons/Palette.astro";
+import Search from "@/components/icons/Search.astro";
 
 const sections = [
   {
@@ -24,6 +25,14 @@ const sections = [
       { id: "X", name: "Visitar X", icon: X },
       { id: "GitHub", name: "Visitar GitHub", icon: GitHub },
     ],
+  },
+  {
+    name: "Temas",
+    items: Object.values(Theme).map((el) => ({
+      id: el,
+      name: el.split("_").slice(1).join(" "),
+      icon: Palette,
+    })),
   },
 ];
 const commands = [
@@ -41,9 +50,17 @@ const commands = [
   <Cmd />
 </div>
 
-<div class="dialog no-print" style="display: none">
+<div class="dialog no-print" style="display: block">
   <div class="dialog__backdrop"></div>
   <div class="dialog__container" tabindex="-1">
+    <div class="dialog__search">
+      <Search />
+      <input
+        class="search__input"
+        placeholder="Escribe un comando o busca..."
+        tabindex="-1"
+      />
+    </div>
     <div class="dialog__sections">
       {
         sections.map((section) => (
@@ -57,16 +74,6 @@ const commands = [
           </div>
         ))
       }
-      <div>
-        <p class="section__title">Temas</p>
-        {
-          Object.values(Theme).map((el) => (
-            <p class="section__content theme" id={el}>
-              <Palette /> {el.split("_").slice(1).join(" ")}
-            </p>
-          ))
-        }
-      </div>
     </div>
     <div class="dialog__footer">
       {
@@ -84,7 +91,7 @@ const commands = [
 </div>
 
 <script>
-  import "@/scripts/commandMenu.ts"
+  import "@/scripts/commandMenu.ts";
 </script>
 
 <style>
