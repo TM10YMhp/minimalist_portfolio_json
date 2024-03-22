@@ -30,7 +30,7 @@ body {
 
 const instance = document.querySelector(".dialog") as HTMLElement;
 const style = document.createElement("style");
-const container = document.querySelector(".dialog__container") as HTMLElement;
+const input = document.querySelector(".search__input") as HTMLInputElement;
 
 function open() {
   const gap = window.innerWidth - document.documentElement.clientWidth;
@@ -40,7 +40,7 @@ function open() {
   instance.style.display = "block";
   instance.style.pointerEvents = "auto";
 
-  container.focus();
+  input.focus();
 }
 
 function close() {
@@ -102,16 +102,23 @@ backdrop.addEventListener("click", () => close());
 
 let mouseMove = false;
 
-container.addEventListener("mousemove", () => {
-  if (!mouseMove) mouseMove = true;
-});
+const container = document.querySelector(".dialog__container") as HTMLElement;
+container.addEventListener(
+  "mousemove",
+  () => {
+    if (!mouseMove) mouseMove = true;
+  },
+  { passive: true },
+);
 
 let currentIndex = 0;
-const items = document.querySelectorAll(".section__content");
-
 const sections = document.querySelector(".dialog__sections") as HTMLElement;
 container.addEventListener("keydown", (event) => {
   mouseMove = false;
+
+  const items: NodeListOf<HTMLElement> = document.querySelectorAll(
+    '.section__content:not([style*="display: none"])',
+  );
 
   if (event.key === "ArrowUp" || (event.shiftKey && event.key === "Tab")) {
     event.preventDefault();
@@ -159,15 +166,21 @@ container.addEventListener("keydown", (event) => {
   }
 });
 
+const items: NodeListOf<HTMLElement> =
+  document.querySelectorAll(".section__content");
 items.forEach((el) => {
-  el.addEventListener("pointerenter", (e) => {
-    if (!mouseMove) return;
+  el.addEventListener(
+    "pointerenter",
+    (e) => {
+      if (!mouseMove) return;
 
-    items.forEach((item) => item.removeAttribute("data-active"));
-    const target = e.target as HTMLElement;
-    target.setAttribute("data-active", "");
-    currentIndex = Array.from(items).indexOf(target);
-  });
+      items.forEach((item) => item.removeAttribute("data-active"));
+      const target = e.target as HTMLElement;
+      target.setAttribute("data-active", "");
+      currentIndex = Array.from(items).indexOf(target);
+    },
+    { passive: true },
+  );
 
   // el.addEventListener("pointerleave", () => {
   //   items.forEach((item) => item.removeAttribute("data-active"));
@@ -200,10 +213,6 @@ const indexedItems = [
 ];
 
 // input
-const input = document.querySelector(".search__input") as HTMLInputElement;
-const contents = document.querySelectorAll(
-  ".section__content",
-) as NodeListOf<HTMLElement>;
 input.addEventListener("input", (e) => {
   const value = (e.target as HTMLInputElement).value;
   const results: string[] = [];
@@ -211,16 +220,22 @@ input.addEventListener("input", (e) => {
   for (const key in indexedItems) {
     const item = indexedItems[key];
     if (item.toLowerCase().includes(value.toLowerCase())) {
-      results.push(item);
+      results.push(item.toLowerCase());
     }
   }
   results.sort((a, b) => a.localeCompare(b));
-  console.log(results, value);
 
-  // TODO: indexedItems debe crearse con name y id
-  contents.forEach((el) => {
-    if (results.includes(el.id)) {
-      el.style.display = "block";
+  items.forEach((el) => {
+    items.forEach((item) => item.removeAttribute("data-active"));
+
+    const _items: NodeListOf<HTMLElement> = document.querySelectorAll(
+      '.section__content:not([style*="display: none"])',
+    );
+    if (_items.length > 0) currentIndex = setActiveIndex(_items, 0, 0);
+
+    const name = el.children[1] as HTMLElement;
+    if (results.includes(name.innerText.toLowerCase())) {
+      el.style.display = "flex";
     } else {
       el.style.display = "none";
     }

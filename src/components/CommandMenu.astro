@@ -50,15 +50,14 @@ const commands = [
   <Cmd />
 </div>
 
-<div class="dialog no-print" style="display: block">
+<div class="dialog no-print" style="display: none">
   <div class="dialog__backdrop"></div>
-  <div class="dialog__container" tabindex="-1">
+  <div class="dialog__container">
     <div class="dialog__search">
       <Search />
       <input
         class="search__input"
         placeholder="Escribe un comando o busca..."
-        tabindex="-1"
       />
     </div>
     <div class="dialog__sections">
@@ -67,9 +66,9 @@ const commands = [
           <div>
             <p class="section__title">{section.name}</p>
             {section.items.map((item: any) => (
-              <p class="section__content" id={item.id}>
-                <item.icon /> {item.name}
-              </p>
+              <div class="section__content" id={item.id}>
+                <item.icon /> <span>{item.name}</span>
+              </div>
             ))}
           </div>
         ))
