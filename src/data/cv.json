@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Alejandro Maturrano",
-    "label": "Full Stack Developer enfocado en crear productos con especial atención al detalle.",
+    "label": "Full Stack Developer",
     "image": "",
     "email": "tm10ymhp@protonmail.com",
     "phone": "+51 926535952",
     "url": "https://tm10ymhp.netlify.app",
-    "summary": "Como Full Stack, he llevado con éxito múltiples productos de 0 a 1. Lidero equipos de manera efectiva, garantizando un entorno donde las personas puedan hacer su mejor trabajo. Actualmente trabajo principalmente con TypeScript, React, Node.js y NextJS. Tengo más de 4 años de experiencia trabajando de forma remota con empresas de todo el mundo.",
+    "summary": "Full stack con más de 4 años de experiencia trabajando de forma remota. He llevado con éxito múltiples productos de 0 a 1 como páginas promocionales, e-commerce, librerías, APIs, documentaciones y utilidades. Lidero equipos de manera efectiva, garantizando un entorno donde las personas puedan hacer su mejor trabajo. Actualmente me encuentro trabajando con TypeScript, React, NodeJS y NextJS.",
     "location": {
       "address": "Ica",
       "postalCode": "11001",
@@ -35,21 +35,39 @@
   "work": [
     {
       "name": "Fisiom Fulness",
-      "position": "Full Stack Developer",
-      "url": "https://fisiomfulness.netlify.app",
+      "position": "Full Stack Developer & Code Owner",
+      "url": "",
       "startDate": "2023-11-20",
       "endDate": "2024-06-12",
-      "summary": "Implementé nuevas funcionalidades, lideré el equipo, trabajé para mejorar la forma en que los desarrolladores envían el código, comencé la migración de React a NextJS y más. Tecnologías: React, JavaScript, TypeScript, NextJS, Tailwind, PandaCSS.",
-      "highlights": ["Started the company"]
+      "summary": "Creé y documenté la librería ff_components para facilitar el manejo de los componentes del front end. Escalé el back end implementando el patrón Event Bus para facilitar la migración de servicios y el manejo de eventos internos y externos. Apliqué múltiples filtros utilizando el patrón Criteria, complementado con el patrón Repository para facilitar el mantenimiento de las bases de datos y la migración de servicios. Me encargué de guiar al equipo en la calidad y escalabilidad del proyecto y participé en la migración del front end de React a NextJS.",
+      "highlights": []
     },
     {
       "name": "Freelancer",
       "position": "Desarrollador Web",
       "url": "",
       "startDate": "2020-02-01",
-      "endDate": "2024-12-12",
+      "endDate": "",
       "summary": "Realicé migraciones a frameworks como Vite, NextJS, Astro, Remix y Angular, mejoré la calidad del código, accesibilidad, flexibilidad y mejoras de rendimiento, trabajé con equipos de distintas partes del mundo, implementé pasarelas de pago, notificaciones por correo, encriptación, autenticación, paneles de control, etc.",
-      "highlights": ["Started the company"]
+      "highlights": []
+    },
+    {
+      "name": "Algoritmo de intervalos de tiempo fijo de Java a Python",
+      "position": "Python Game Developer",
+      "url": "",
+      "startDate": "2023-06-01",
+      "endDate": "2023-08-01",
+      "summary": "Creé un algoritmo de intervalos de tiempo fijo en Java y lo migré a Python para optimizar la gestión de una exigente cantidad de entidades en pantalla. Esta migración mejoró significativamente el rendimiento, aprovechando las capacidades de alto nivel de Python.",
+      "highlights": []
+    },
+    {
+      "name": "SereneNvim",
+      "position": "Lua NeoVim Developer",
+      "url": "https://github.com/TM10YMhp/init.lua/tree/test",
+      "startDate": "2019-02-01",
+      "endDate": "",
+      "summary": "Creé SereneNvim para solucionar problemas de compatibilidad de NeoVim con Windows sin necesidad de instalar WSL, garantizando el alto rendimiento que buscaba. Utilizo esta herramienta de manera constante para trabajar con Lua, JavaScript, TypeScript y Python. Actualmente, estoy mejorando el soporte para C++, C# y Java.",
+      "highlights": []
     }
   ],
   "volunteer": [
@@ -60,7 +78,7 @@
       "startDate": "2012-01-01",
       "endDate": "2013-01-01",
       "summary": "Description",
-      "highlights": ["Awarded 'Volunteer of the Month'"]
+      "highlights": []
     }
   ],
   "education": [
@@ -72,7 +90,7 @@
       "startDate": "2003-01-01",
       "endDate": "2009-01-01",
       "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
+      "courses": []
     }
   ],
   "awards": [
@@ -80,7 +98,7 @@
       "title": "Award",
       "date": "2014-11-01",
       "awarder": "Company",
-      "summary": "There is no spoon."
+      "summary": ""
     }
   ],
   "certificates": [
@@ -231,14 +249,6 @@
       "url": "https://tm10ymhp.netlify.app"
     },
     {
-      "name": "init.lua",
-      "startDate": "",
-      "endDate": "",
-      "description": "Distro de NeoVim inspirada en LazyVim, NvChad y en la visión de Bram Moolenar, el creador de Vim.",
-      "highlights": ["Side Project", "Lua", "NeoVim", "LSP", "Dotfiles"],
-      "url": "https://github.com/TM10YMhp/init.lua/tree/test"
-    },
-    {
       "name": "Markdown Editor",
       "startDate": "",
       "endDate": "",
@@ -254,66 +264,11 @@
       "url": "https://markdown-editor-311416.netlify.app"
     },
     {
-      "name": "Pokedex Angular",
-      "startDate": "",
-      "endDate": "",
-      "description": "Pokedex con acceso a más de 800 especies de pokémon con sugerencias en tiempo real.",
-      "highlights": [
-        "Side Project",
-        "Angular",
-        "TypeScript",
-        "Playwright",
-        "RxJS",
-        "Tailwind CSS"
-      ],
-      "url": "https://pokedex-test-angular.netlify.app"
-    },
-    {
-      "name": "UI Mockup - Notes",
-      "startDate": "",
-      "endDate": "",
-      "description": "Diseño para aplicación móvil, muestra un listado de notas y una zona de visualización adaptable.",
-      "highlights": [
-        "Side Project",
-        "Diseño",
-        "Next.js",
-        "Jotai",
-        "Tailwind CSS",
-        "JavaScript"
-      ],
-      "url": "https://ui-mockup-notes.netlify.app"
-    },
-    {
-      "name": "Musicfy",
-      "startDate": "",
-      "endDate": "",
-      "description": "Servicio de retransmisión de música con suscripciones y planes de pago.",
-      "highlights": [
-        "Side Project",
-        "React",
-        "Redux",
-        "Node.js",
-        "MongoDB",
-        "JavaScript",
-        "Styled Components",
-        "CSS Modules"
-      ],
-      "url": ""
-    },
-    {
       "name": "Compress Webp",
       "startDate": "",
       "endDate": "",
       "description": "Convierte y comprime imágenes a webp desde la interfaz de comandos.",
       "highlights": ["Side Project", "Node.js", "JavaScript", "Sharp"],
-      "url": ""
-    },
-    {
-      "name": "RPG Python",
-      "startDate": "",
-      "endDate": "",
-      "description": "Juego estilo RPG migrado de Java a Python.",
-      "highlights": ["Side Project", "Java", "Python", "Pygame"],
       "url": ""
     },
     {
